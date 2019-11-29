@@ -1,0 +1,47 @@
+zad 1
+create index name_person on person (name); -- exist
+create index birth_person on person (birth); -- exist
+create index id_name_sport on sport (id,name);
+create index name_id_other on other (name,id);
+create index person_id_type_hobby on hobby (person,id,type);
+
+zad 2
+
+select sex from person where name like "A%";
+select name from sport where team = "team" order by name;
+select t1.id,t2.id from sport as t1 join sport as t2 on t1.localization = t2.localization where t1.type="solo" and t2.type="solo";
+select id from person where birth < date "2000-01-01";
+select name from hobby as t1 join allHobby as t2
+	on t1.id = t2.id and t1.type = t2.sport
+	group by t1.id,t1.type
+	order by count(*) DESC
+	limit 1;
+
+select name from person where birth = (
+	select t1.name,t1.birth from person as t1 join pet as t2 
+	on t1.id=t2.ownerid 
+	where t2.species="dog" 
+	order by t1.birth DESC limit 1 );
+	
+zad 3 
+	ręczne
+	
+delimiter $$$
+create PROCEDURE p1()
+begin
+Declare cursor_person cursor on (select * from person);
+DECLARE continue Handler for not found set done = true;
+open cursor_person;
+llll: LOOP
+	if done then
+		leave llll;
+	end if;
+	FETCH cursor_person (@pp);
+	SET @idJob = select id from profession order by RAND() limit 1;
+	SET @max_salary_1 = select max_salary from profession where id = @idJob;
+	set @min_slaary_1 = select min_slaary from profession where id = @idJob;
+	set @salary = ROUND(((@max_salary_1 - @min_slaary_1)*RAND() + @min_slaary_1,0);
+	insert into job values ((select id from @pp),@idJob,@salary);
+end llll;
+end;$$$
+delimiter ;
