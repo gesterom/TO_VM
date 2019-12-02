@@ -24,7 +24,8 @@ select name from person where birth = (
 	order by t1.birth DESC limit 1 );
 	
 zad 3 
-	ręczne
+	ręczne -- in VM
+	
 	
 delimiter $$$
 create PROCEDURE p1()
@@ -45,3 +46,54 @@ llll: LOOP
 end llll;
 end;$$$
 delimiter ;
+
+zad 4 -- in VM
+
+zad 5 -- in VM
+
+zad 7 -- in VM
+
+zad 8 -- in VM
+
+//zad 9 -- in VM
+
+create function laplace(
+	b double,
+	e double)
+	returns double
+	return 1/(2*b)*exp(-(abs(Rand()-e)/b)
+	
+
+delimiter $$$
+create procedure zad9(zawod varchar(80))
+begin
+declare idzaw int;
+declare epsilon double;
+declare epsilonm double;
+declare adder double;
+declare delta double;
+declare resvar double;
+declare const double;
+set delta = 1;
+set epsilonm = 0.03;
+set epsilon = delta/epsilonm;
+select distinct id into idzaw from zawody where nazwa = zawod;
+select pensjamax into const from zawody where id = idzaw;
+select avg(zarobki) into resvar from praca where idzawodu = idzaw;
+select laplace(0,epsilon) into adder;
+set resvar = resvar + adder;
+if resvar > const then
+	select 'Blad';
+else
+	select resvar;
+end if;
+end $$$
+delimiter ;
+
+zad 10
+mysqldump hobby > hobby_backup.sql 
+drop database hobby;
+mysql da_name < hobby_backup.sql 
+
+zad 4,7,9,6
+
