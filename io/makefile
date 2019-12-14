@@ -14,13 +14,13 @@
 # project name (generate executable with this name)
 TARGET   = io 
 
-CC       = gcc -std=c99
+CC       = gcc 
 # compiling flags here
-CFLAGS   = -Wall -I. -Iinclude -g 
+CFLAGS   = -Wall -I. -Iinclude -g -std=c99 
 
-LINKER   = gcc -o
+LINKER   = @$(CC) -o 
 # linking flags here
-LFLAGS   = -Wall -Wpedantic -Wextra -I. -lm
+LFLAGS   = -Wall -Wpedantic -Wextra -I. -lm 
 
 # change these to set the proper directories where each files shoould be
 SRCDIR   = src

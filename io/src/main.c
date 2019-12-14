@@ -1,13 +1,13 @@
-#include <printf.h>
+#include <mprintf.h>
 #include <stdio.h>
+#include <unistd.h>
 
 int main(){
 
     char* s = "Hello world\0";
-    mprintf("%x %x %s %x\n",0x4a4a4a4a,0x4a4a4a,s,0x444);
-    char buffer[20];
-    itos(65,buffer,16);
-
+    mprintf("%s %x %x\n",s,0x4a4a4a4a,'a');
+    char buffer[80];
+    printf("%s\n",buffer);
     
     return 0;
 }
