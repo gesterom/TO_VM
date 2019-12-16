@@ -1,0 +1,6 @@
+31	Harold	\N	1990-01-01	m
+32	Gwen	\N	1990-01-01	m
+33	Benny	\N	1990-01-01	m
+34	Diane	\N	1990-01-01	m
+38	aaa	bbb	1900-01-01	m
+39	aaaa	cccc	1999-01-01	f
