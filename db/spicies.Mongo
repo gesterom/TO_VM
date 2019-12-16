@@ -1,0 +1,11 @@
+	db.sport.insert({"name":"szachy","localization":"hala","team":"solo"});
+	db.sport.insert({"name":"warcaby","localization":"hala","team":"solo"});
+	db.sport.insert({"name":"go","localization":"hala","team":"solo"});
+	db.sport.insert({"name":"golf","localization":"hala","team":"solo"});
+	db.sport.insert({"name":"tenis","localization":["hala","out"],"team":"solo"});
+	db.sport.insert({"name":"maraton","localization":"out","team":["solo","team"]});
+	db.sport.insert({"name":"pływanie","localization":"hala","team":["solo","team"]});
+	db.sport.insert({"name":"oszczep","localization":"out","team":"solo"});
+	db.sport.insert({"name":"100m","localization":["hala","out"],"team":"solo"});
+	db.sport.insert({"name":"lol","localization":"e-sport","team":"team","genere":["5v5","moba"]});
+	db.sport.insert({"name":"for honor","localization":"e-sport","team":["team","solo"],"genere":["action","fighting"]});
