@@ -1,0 +1,84 @@
+import io.print;
+import loger;
+
+// in function only other function
+uncashable function power2(int a) -> int {
+	a*a
+}
+
+namespace MySpace{
+
+  class Person{
+    static{
+        int a;
+    }
+    private{
+      int age;
+      string name;
+    }
+    public{
+      procedure Person (this,string name) /*-> Person default */{
+        this.age = 99;
+        this.name = name;
+        auto foo = (int a)->int{return a*a;};
+        print("{}",foo(5));
+        print("{}",power2(5));
+        //return this; -- default
+      }
+      procedure Person (this, int age, string name) /*-> Person default */{ // ___AASDASDA::Person::Person__int_string
+        this.age = age;
+        this.name = name;
+        auto foo = (int a)->int{return a*a;};
+        print("{}",foo(5));
+        print("{}",power2(5));
+        //return this; -- default
+        return this; // work
+      }
+      //procedure Person (int age, string name) -> Person ret{ // ___AASDASDA::Person::Person__int_string
+      //  ret.age = age;
+      //  ret.name = name;
+      //  return; // work
+      //}
+      procedure getAge() -> int foo, int b;{
+        foo = this.age; // -- work
+        b = 12;
+       	return
+        //return age;	 // -- dont work
+      }
+    }
+  };
+}
+
+procedure foo(Person p)
+{
+  //print("{}",p.getAge()); // -- error how print tupple
+  [int a,int b] = p.getAge();
+  array string tab = {"Ala","Ma","Kota"};
+ 	print("{} ma {} lat",a,b);
+  auto context = log.context("SessionID","MAGIC_Value") // NOP
+  log.log("{} -- {%SessionID} ",address(p)); // NOP
+  // 0x7a7a7a7a -- MAGIC_Value 
+}
+// new do nothing 
+
+procedure caller(procedure foo(Person),Person p){
+	Person p = Person.init();
+	Thread thread = Thread(foo, p);
+	thread.run();
+}
+
+procedure main(array String args) -> int {
+	
+	print("{}","Hell of world");
+	for(Int i = 0 ; i < args.size() ; i++)
+	{
+		print(args[i]);
+	}
+	print("{0:Int}",cast<Int>(args[1]));
+	print("{0:Int}",(Int)(args[1]));
+	if( (Int) args[1] > 32 ) {
+		print("jesteś pełnoletni i masz {} lat",(Int) args[1]);
+	}
+	caller(procedure foo(), Person(18,"AAA") );
+	return 0;
+}
