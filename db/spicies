@@ -5,8 +5,9 @@ db.species.insert({"name":"rat","race":["A","D"],"minWeight": 500,"maxWeight":20
 db.species.insert({"name":"virus","minWeight": 1,"maxWeight":10,"color":"none","lifeSpan":0.2});
 db.species.insert({"name":"hamster","minWeight": 200,"maxWeight":1000,"color":["brown","grey"],"lifeSpan":2});
 db.species.insert({"name":"bat","minWeight": 200,"maxWeight":5000,"color":"brown","lifeSpan":4});
-db.species.insert({"name":"squid","minWeight": 1000,"maxWeight":60000,"color":["black","lifeSpan":15});
+db.species.insert({"name":"squid","minWeight": 1000,"maxWeight":60000,"color":"black","lifeSpan":15});
 db.species.insert({"name":"sheap","minWeight": 3000,"maxWeight":80000,"color":"white","lifeSpan":16});
 db.species.insert({"name":"pig","minWeight": 10000,"maxWeight":100000,"color":"pink","lifeSpan":18});
 db.species.insert({"name":"cow","minWeight": 10000,"maxWeight":150000,"color":["black","white"],"lifeSpan":20});
 db.species.insert({"name":"bee","minWeight": 10,"maxWeight":500,"color":"yellow","lifeSpan":1});
+

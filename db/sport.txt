@@ -1,5 +1,6 @@
-1	football	team	mexico
-2	basketball	team	mexico
-3	3dc2154bb751724dda09	team	6a131f7dabcad8d1bdae
-4	627f0273e3e5b29f3234	team	b827332bdb294487efb7
-18	8f93d8a5b997a912c75e	solo	8144294dd0df9460a2bc
+_id,name,team,localization
+1,football,team,mexico
+2,basketball,team,mexico
+3,3dc2154bb751724dda09,team,6a131f7dabcad8d1bdae
+4,627f0273e3e5b29f3234,team,b827332bdb294487efb7
+18,8f93d8a5b997a912c75e,solo,8144294dd0df9460a2bc
